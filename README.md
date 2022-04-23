@@ -1,2 +1,2 @@
 # sem-6-viva
-![](https://komarev.com/ghpvc/?username=kulkarni-harsh)
+![](https://komarev.com/ghpvc/?username=yourmom)
