@@ -1,5 +1,4 @@
-from ast import literal_eval
-
+#TODO: complete the code bitch
 
 imperative=['STOP','ADD','SUB','MULT','MOVER','MOVEM','COMP','BC','DIV','READ','PRINT']
 declarative=['yourmom','DS','DC']
