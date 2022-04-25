@@ -6,8 +6,7 @@ code=[
     ' ,MOVER,AREG,DATA',
     ' ,ADD,AREG,BREG',
     'DATA,DC,5, ',
-    'ST,DS,10, ',
-    ' ,ORIGIN,300, ',
+    'ST,DC,10, ',
     ' ,END, , '
     ]
 
@@ -31,15 +30,11 @@ for line in code:
         
         else:
             symbolTable+=[[cmd[0],lc,1]]
-        
-        if cmd[1]=='DS':
-            lc+=(int(cmd[2]))
+
         
         continue
 
-    elif cmd[1]=='ORIGIN':
-        lc=int(cmd[2])
-        continue
+
     lc+=1
 
 for i in symbolTable:
