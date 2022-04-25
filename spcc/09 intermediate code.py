@@ -1,40 +1,34 @@
-#TODO: complete the code bitch
-
-imperative=['STOP','ADD','SUB','MULT','MOVER','MOVEM','COMP','BC','DIV','READ','PRINT']
-declarative=['yourmom','DS','DC']
-assembler=['yourmom ','START','END','ORIGIN','EQU','LTORG']
-registers=['yourmom','AREG','BREG','CREG','DREG','EREG','FREG']
-
-
 code=[
-    ' ,START,200, ',
-    ' ,MOVER,BREG,=1',
-    ' ,MOVER,AREG,DATA',
-    'DATA,DC,5, ',
-    ' ,LTORG, , ',
-    ' ,ORIGIN,400, ',
-    ' ,ADD,CREG,=2',
-    ' ,END, , '
+    ['START','200'],
+    ['','MOVER','AREG','DATA'],
+    ['','MOVER','BREG','=4'],
+    ['X','EQU','10'],
+    ['','LTORG'],
+    ['DATA','DC','4'],
+    ['ST','DS','10'],
+    ['','MOVER','CREG','=5'],
+    ['END']
     ]
-literal_table=[['=1',203],['=2',401]]
-symbol_table=[['DATA',202]]
-intermediate_code=[]
-for cmd in code:
-    line=[]
-    cmd=cmd.split(',')
-    for word in cmd:
-        if word in imperative:
-            line+=[('IS',imperative.index(word))]
-        if word in declarative:
-            line+=[('DL',declarative.index(word))]
-        if word in assembler:
-            line+=[('IS',assembler.index(word))]
-        if word in registers:
-            line+=[('RG',registers.index(word))]
-        if word in [x[0]for x in symbol_table]:
-            line+=[('S',[x[0]for x in symbol_table].index(word))]
-        if word in [x[0]for x in literal_table]:
-            line+=[('L',[x[0]for x in literal_table].index(word))]
-
-
-
+cmd_val = {'START':['AD',00],'MOVER':['IS',4],'DC':['DL',2],'DS':['DL',1],
+        'EQU':['AD',3],'LTORG':['AD',5],'END':['AD',2] 
+}
+rg_val = {'AREG':1,'BREG':2,'CREG':3}
+st = {'DATA':[0,203],'ST':[1,204]}
+LT = {'=4':[0,203],'=5':[1,226]}
+for i in range(len(code)):
+    for j in range(len(code[i])):
+        if code[i][j] in cmd_val:
+            val = cmd_val[code[i][j]]
+            print(f'({val[0]},{val[1]})',end='')
+            if code[i][j] is 'LTORG':
+                print(f'(DL,2)(C,1)',end='')
+        elif code[i][j] in rg_val:
+            val = rg_val[code[i][j]]
+            print(f'(Rg,{val})',end='')
+        elif code[i][j] in st:
+            print(f'(S,{st[code[i][j]][0]})',end='')
+        elif code[i][j] in LT:
+            print(f'(L,{LT[code[i][j]][0]})',end='')
+        elif code[i][j].isdigit():
+            print(f'(C,{code[i][j]})',end='')
+    print()
