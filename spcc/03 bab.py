@@ -1,3 +1,5 @@
+# SOS: This is code for strings ending with BAB 
+# RIP 🙏🏻 Qn probably is about strings containing BAB
 x=input("Enter String ")
 state=0
 for i in x:
