@@ -18,4 +18,4 @@ for i in x:
             state=3
     
 
-print('The String contains bab'if state==3 else 'The String does not end with bab')
+print('The String contains bab'if state==3 else 'The String does not contain bab')
