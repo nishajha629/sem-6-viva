@@ -17,6 +17,8 @@ for x in s:
       state=9
     elif x== '=':
       state = 4
+    else:
+      state= 3
     
     
   elif state == 5:
@@ -24,9 +26,7 @@ for x in s:
       state=6
     else:
       state=7
-  elif state == 4:
-    if x== '=':
-      state=8
+
 
 if state==1:
   print('L')
@@ -38,9 +38,8 @@ elif state==5:
   print('G')
 elif state==6:
   print('GE')
-elif state==8:
+elif state==2:
   print('E')
 elif state==9:
-  print('NT')
-
+  print('NE')
 
