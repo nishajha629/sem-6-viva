@@ -18,10 +18,6 @@ for i in x:
             state=0
         else:
             state=3
-    else:
-        if i=='a':
-            state=2
-        else:
-            state=1
+    
 
 print('The String ends with bab'if state==3 else 'The String does not end with bab')
