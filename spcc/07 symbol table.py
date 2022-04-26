@@ -30,8 +30,6 @@ for line in code:
         
         else:
             symbolTable+=[[cmd[0],lc,1]]
-
-        
         continue
 
 

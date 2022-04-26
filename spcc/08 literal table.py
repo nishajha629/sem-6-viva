@@ -2,9 +2,7 @@
 code=[
     ' ,START,200, ',
     ' ,MOVER,BREG,=1',
-    ' ,ADD,AREG,BREG',
     ' ,LTORG, , ',
-    ' ,ORIGIN,400, ',
     ' ,ADD,CREG,=2',
     ' ,END, , '
     ]
@@ -25,10 +23,6 @@ for cmd in code:
             if literal_table[i][1]=='-':
                 literal_table[i][1]=lc
                 lc+=1
-        continue
-    
-    elif cmd[1]=='ORIGIN':
-        lc=int(cmd[2])
         continue
     
     elif cmd[1]=='END':

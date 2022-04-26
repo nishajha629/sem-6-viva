@@ -6,9 +6,7 @@ inp_mdt=[['MACRO'],
 ['MEND']]
 op=['A', 'S']
 mdtc=0
-mntc=0
 mdt=[]
-mnt=[]
 ala=[]
 
 def createala(xt):
@@ -26,13 +24,12 @@ for x in inp_mdt:
         mdtc+=1
         createala(x)
     elif len(x)>1 and x[1] in op : 
-        temp = x
         yt=[]
-        for y in range (len(temp)):
-            if temp[y] in ala :
-                yt.append('#' + str(ala.index(temp[y])))
+        for y in range (len(x)):
+            if x[y] in ala :
+                yt.append('#' + str(ala.index(x[y])))
             else :
-                yt.append(temp[y])
+                yt.append(x[y])
         t=[mdtc,yt]
         mdtc+=1
         mdt.append(t)

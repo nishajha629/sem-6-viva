@@ -26,7 +26,7 @@ for x in inp_mnt :
   else:
     if flag==1:
       mdtc+=1
- 
+
 print ("MNT table")
 print('='*50)
 for s in range (0,len(mnt)):
